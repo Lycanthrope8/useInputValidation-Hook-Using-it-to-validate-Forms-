@@ -1,4 +1,4 @@
-import useInput from '../hooks/use-input';
+import useInputValidation from "../hooks/use-inputValidation";
 
 const SimpleInput = (props) => {
   const {
@@ -8,7 +8,7 @@ const SimpleInput = (props) => {
     valueChangeHandler: nameChangedHandler,
     inputBlurHandler: nameBlurHandler,
     reset: resetNameInput,
-  } = useInput((value) => value.trim() !== '');
+  } = useInputValidation((value) => value.trim() !== '');
 
   const {
     value: enteredEmail,
@@ -17,7 +17,7 @@ const SimpleInput = (props) => {
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
-  } = useInput((value) => value.includes('@'));
+  } = useInputValidation((value) => value.includes('@'));
 
   let formIsValid = false;
 
